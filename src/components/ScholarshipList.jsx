@@ -102,7 +102,7 @@ export default function ScholarshipList({ initialScholarships }) {
             Opening Soon
           </button>
         ) : (
-          <a href={scholarship.url} target="_blank" rel="noreferrer" className="block text-center w-full bg-blue-600 text-white py-2.5 rounded-lg text-sm font-semibold hover:bg-blue-700 transition">
+          <a href={scholarship.url} target="_blank" rel="noopener noreferrer" className="block w-full text-center py-2 px-4 bg-slate-800 hover:bg-slate-900 text-white font-medium rounded-md transition-colors">
             Apply Now
           </a>
         )}
