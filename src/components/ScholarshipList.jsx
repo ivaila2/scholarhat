@@ -58,7 +58,7 @@ export default function ScholarshipList({ initialScholarships }) {
     return (
       <div className={`p-5 bg-white rounded-xl border mb-4 flex flex-col ${status === 'closed' ? 'border-slate-200 opacity-60' : 'border-slate-200 hover:shadow-md transition-shadow'}`}>
         <div className="mb-4">
-          <h2 className={`text-lg font-semibold leading-tight mb-2 ${status === 'closed' ? 'text-slate-500' : 'text-slate-800'}`}>
+          <h2 className={`text-xl font-claude font-semibold leading-tight mb-2 ${status === 'closed' ? 'text-slate-500' : 'text-slate-800'}`}>
             {scholarship.title}
           </h2>
           <p className="text-sm text-slate-600 line-clamp-2">{scholarship.audience}</p>

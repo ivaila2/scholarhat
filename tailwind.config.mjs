@@ -4,7 +4,9 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				// We are naming it 'claude' so it's easy for you to remember!
+				// This overrides the default font to Inter for the whole site
+				sans: ['"Inter"', 'sans-serif'], 
+				// Our custom serif for headings
 				claude: ['"Newsreader"', 'serif'],
 			}
 		},
