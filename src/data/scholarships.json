@@ -1,0 +1,299 @@
+[
+    {
+      "id": 1,
+      "title": "Community Foundation of Southeastern Alberta Award",
+      "amount": "$1,000",
+      "open_date": "2026-02-01",
+      "deadline": "2026-05-15",
+      "audience": "Graduating High School Seniors in Medicine Hat",
+      "url": "https://cfsea.ca/"
+    },
+    {
+      "id": 2,
+      "title": "Medicine Hat College Entrance Scholarship",
+      "amount": "$2,500",
+      "open_date": "2026-03-01",
+      "deadline": "2026-06-01",
+      "audience": "First-year MHC students",
+      "url": "https://www.mhc.ab.ca/"
+    },
+    {
+      "id": 3,
+      "title": "Kinsmen Club of Medicine Hat Grant",
+      "amount": "$500",
+      "open_date": "2026-04-01",
+      "deadline": "2026-04-30",
+      "audience": "Students demonstrating community service",
+      "url": "https://medicinehatkinsmen.ca/"
+    },
+    {
+      "id": 4,
+      "title": "South Country Co-op Scholarship",
+      "amount": "$1,000",
+      "open_date": "2026-03-01",
+      "deadline": "2026-05-01",
+      "audience": "High school students in the South Country Co-op trading area",
+      "url": "https://www.southcountryco-op.crs/"
+    },
+    {
+      "id": 5,
+      "title": "MHC Grassroots Bursary",
+      "amount": "$500",
+      "open_date": "2026-05-01",
+      "deadline": "2026-08-15",
+      "audience": "Students taking non-credit courses",
+      "url": "https://www.mhc.ab.ca/student-life/financial-aid"
+    },
+    {
+      "id": 6,
+      "title": "Dr. Gary McPherson Leadership Scholarship",
+      "amount": "$2,000",
+      "open_date": "2025-10-01",
+      "deadline": "2026-01-30",
+      "audience": "Post-secondary students demonstrating leadership",
+      "url": "https://www.mhc.ab.ca/"
+    },
+    {
+      "id": 7,
+      "title": "Alberta Indigenous Careers Award",
+      "amount": "$4,000",
+      "open_date": "2025-11-01",
+      "deadline": "2026-02-13",
+      "audience": "Indigenous Albertans pursuing in-demand careers",
+      "url": "https://www.mhc.ab.ca/"
+    },
+    {
+      "id": 8,
+      "title": "REMAX Quest for Excellence",
+      "amount": "$1,000",
+      "open_date": "2025-09-01",
+      "deadline": "2026-03-06",
+      "audience": "Graduating high school students demonstrating leadership",
+      "url": "https://studentscholarships.org/"
+    },
+    {
+      "id": 9,
+      "title": "Laurence Decore Award",
+      "amount": "$1,000",
+      "open_date": "2025-10-01",
+      "deadline": "2026-01-30",
+      "audience": "Alberta post-secondary students involved in clubs",
+      "url": "https://www.mhc.ab.ca/"
+    },
+    {
+      "id": 10,
+      "title": "Kochhar & Co. Scholarship",
+      "amount": "$1,000",
+      "open_date": "2026-01-01",
+      "deadline": "2026-03-31",
+      "audience": "Business and accounting students",
+      "url": "https://studentscholarships.org/"
+    },
+    {
+      "id": 11,
+      "title": "Dick Shaw Memorial Scholarship",
+      "amount": "$2,000",
+      "open_date": "2026-01-01",
+      "deadline": "2026-03-23",
+      "audience": "Full-time college/university students",
+      "url": "https://studentscholarships.org/"
+    },
+    {
+      "id": 12,
+      "title": "MHPSD Financial Assistance",
+      "amount": "$500",
+      "open_date": "2026-04-01",
+      "deadline": "2026-04-15",
+      "audience": "MHPSD students needing financial assistance",
+      "url": "https://www.mhpsd.ca/"
+    },
+    {
+      "id": 13,
+      "title": "George Davison Achievement Award",
+      "amount": "$250",
+      "open_date": "2026-05-01",
+      "deadline": "2026-06-15",
+      "audience": "Graduating Grade 6 students",
+      "url": "https://georgedavison.mhpsd.ca/"
+    },
+    {
+      "id": 14,
+      "title": "Alexander Rutherford Scholarship",
+      "amount": "$2,500",
+      "open_date": "2026-06-01",
+      "deadline": "2026-08-31",
+      "audience": "Alberta high school students based on academic averages",
+      "url": "https://studentaid.alberta.ca/"
+    },
+    {
+      "id": 15,
+      "title": "Jason Lang Scholarship",
+      "amount": "$1,000",
+      "open_date": "2026-07-01",
+      "deadline": "2026-09-15",
+      "audience": "Alberta post-secondary students continuing into 2nd year",
+      "url": "https://studentaid.alberta.ca/"
+    },
+    {
+      "id": 16,
+      "title": "Cypress County Agricultural Scholarship",
+      "amount": "$1,000",
+      "open_date": "2026-04-01",
+      "deadline": "2026-06-30",
+      "audience": "Students from Cypress County pursuing ag-related studies",
+      "url": "https://www.cypress.ab.ca/"
+    },
+    {
+      "id": 17,
+      "title": "Medicine Hat Exhibition & Stampede Scholarship",
+      "amount": "$1,000",
+      "open_date": "2026-02-15",
+      "deadline": "2026-04-15",
+      "audience": "Local students pursuing agriculture, trades, or western heritage",
+      "url": "https://www.mhstampede.com/"
+    },
+    {
+      "id": 18,
+      "title": "Servus Credit Union Young Adult Scholarship",
+      "amount": "$1,500",
+      "open_date": "2026-01-01",
+      "deadline": "2026-03-31",
+      "audience": "Servus Credit Union members entering post-secondary",
+      "url": "https://www.servus.ca/"
+    },
+    {
+      "id": 19,
+      "title": "ATB Financial Indigenous Education Award",
+      "amount": "$1,500",
+      "open_date": "2026-05-01",
+      "deadline": "2026-08-15",
+      "audience": "Indigenous students studying business or finance in Alberta",
+      "url": "https://www.atb.com/"
+    },
+    {
+      "id": 20,
+      "title": "ATA Local 21 Scholarship",
+      "amount": "$1,000",
+      "open_date": "2026-03-01",
+      "deadline": "2026-05-31",
+      "audience": "Children of Southeast Alberta Teachers' Association members",
+      "url": "https://local21.teachers.ab.ca/"
+    },
+    {
+      "id": 21,
+      "title": "Medicine Hat Police Association Bursary",
+      "amount": "$500",
+      "open_date": "2026-04-01",
+      "deadline": "2026-06-15",
+      "audience": "Local high school graduates pursuing criminal justice",
+      "url": "https://mhps.ca/"
+    },
+    {
+      "id": 22,
+      "title": "Medicine Hat Women in Business Bursary",
+      "amount": "$500",
+      "open_date": "2026-02-01",
+      "deadline": "2026-03-08",
+      "audience": "Female students entering business programs",
+      "url": "https://mhwib.ca/"
+    },
+    {
+      "id": 23,
+      "title": "Hat High (MHHS) Alumni Memorial Scholarship",
+      "amount": "$1,000",
+      "open_date": "2026-03-01",
+      "deadline": "2026-05-15",
+      "audience": "Graduating students from Medicine Hat High School",
+      "url": "https://mhhs.mhpsd.ca/"
+    },
+    {
+      "id": 24,
+      "title": "Crescent Heights High School Leadership Award",
+      "amount": "$500",
+      "open_date": "2026-03-01",
+      "deadline": "2026-05-15",
+      "audience": "Graduating students from CHHS demonstrating leadership",
+      "url": "https://chhs.mhpsd.ca/"
+    },
+    {
+      "id": 25,
+      "title": "Monsignor McCoy Faith in Action Award",
+      "amount": "$500",
+      "open_date": "2026-03-01",
+      "deadline": "2026-05-15",
+      "audience": "Graduating students from McCoy Catholic High School",
+      "url": "https://mccoy.mhcbe.ab.ca/"
+    },
+    {
+      "id": 26,
+      "title": "Saamis Memorial Funeral Chapel Scholarship",
+      "amount": "$1,000",
+      "open_date": "2026-04-01",
+      "deadline": "2026-06-30",
+      "audience": "Local students pursuing healthcare or mortuary science",
+      "url": "https://saamis.com/"
+    },
+    {
+      "id": 27,
+      "title": "Louise McKinney Post-Secondary Scholarship",
+      "amount": "$2,500",
+      "open_date": "2026-06-01",
+      "deadline": "2026-10-31",
+      "audience": "Top academic Alberta post-secondary students",
+      "url": "https://studentaid.alberta.ca/"
+    },
+    {
+      "id": 28,
+      "title": "Medicine Hat Rotary Club Music Festival Award",
+      "amount": "$500",
+      "open_date": "2025-12-01",
+      "deadline": "2026-02-15",
+      "audience": "Participants in the local Rotary Music Festival",
+      "url": "https://rotarymusicfestival.com/"
+    },
+    {
+      "id": 29,
+      "title": "Medicine Hat Lions Club Community Grant",
+      "amount": "$1,000",
+      "open_date": "2026-03-15",
+      "deadline": "2026-06-01",
+      "audience": "Students with strong volunteer history in Medicine Hat",
+      "url": "https://e-clubhouse.org/sites/medicinehat/"
+    },
+    {
+      "id": 30,
+      "title": "MHC International Student Scholarship",
+      "amount": "$1,000",
+      "open_date": "2026-01-15",
+      "deadline": "2026-04-01",
+      "audience": "International students enrolled at MHC",
+      "url": "https://www.mhc.ab.ca/"
+    },
+    {
+      "id": 31,
+      "title": "Tradesecrets Alberta Apprenticeship Scholarship",
+      "amount": "$1,000",
+      "open_date": "2026-05-01",
+      "deadline": "2026-06-30",
+      "audience": "Alberta registered apprentices",
+      "url": "https://tradesecrets.alberta.ca/"
+    },
+    {
+      "id": 32,
+      "title": "Southeastern Alberta Regional Science Fair Award",
+      "amount": "$500",
+      "open_date": "2026-01-01",
+      "deadline": "2026-03-15",
+      "audience": "Top senior projects at the SEAR Science Fair",
+      "url": "https://searsf.com/"
+    },
+    {
+      "id": 33,
+      "title": "City of Medicine Hat Environmental Bursary",
+      "amount": "$1,000",
+      "open_date": "2026-04-01",
+      "deadline": "2026-07-31",
+      "audience": "Students pursuing environmental sciences",
+      "url": "https://www.medicinehat.ca/"
+    }
+  ]
