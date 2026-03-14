@@ -1,10 +1,10 @@
-# 🎓 Scholarhat
+# 🎓 ScholarAB
 
-The fastest, easiest way for students to find local scholarships. 
-No registration, no data storage, open source, and completely free.
+The fastest, easiest way for students in Alberta to find scholarships.
+No registration, open source, and free.
 
 ## 🚀 Why this exists
-National scholarship databases are overwhelming and heavily gated. Scholarhat is a hyper-local, fast aggregator designed to remove friction. It does not collect user data and links students directly to the official application pages.
+National scholarship databases are overwhelming and heavily gated. ScholarAB is a hyper-local, fast aggregator designed to remove friction. It does not collect user data and links students directly to the official application pages.
 
 ## 🛠️ Tech Stack
 - **Framework:** [Astro](https://astro.build)
