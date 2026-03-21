@@ -1,0 +1,74 @@
+---
+const { currentPath } = Astro.props;
+const navCls = (p) => `hidden md:block transition-colors ${currentPath === p ? 'text-gray-900 dark:text-white' : 'text-gray-500 hover:text-gray-700 dark:text-white/50 dark:hover:text-white/90'}`;
+const mobCls = (p, border = false) => `mobile-menu-link block px-6 py-4 text-sm font-medium transition-colors${border ? ' border-b border-black/5 dark:border-white/[0.06]' : ''} ${currentPath === p ? 'text-gray-900 dark:text-white' : 'text-gray-600 dark:text-white/50 hover:text-gray-900 dark:hover:text-white'}`;
+---
+
+<div class="sticky top-2 z-50 mb-10" style="padding: 0 16px;">
+  <div class="nav-wrapper mx-auto" style="max-width: 900px; position: relative;">
+    <nav class="glass-nav flex justify-between items-center px-6 py-3" style="border-radius: 9999px;">
+      <a href="/" onclick="if(window.location.pathname==='/'){event.preventDefault()}" class="hover:opacity-80 transition-opacity flex items-center" aria-label="ScholarAB home">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 56" fill="none" height="36" aria-hidden="true">
+          <path d="M10 42 L22 20 L34 42Z" fill="#22d3a5" opacity="0.35"/><path d="M26 42 L42 14 L58 42Z" fill="#22d3a5" opacity="0.6"/>
+          <path d="M18 42 L34 6 L50 42Z" fill="#22d3a5"/><path d="M34 6 L39 18 L29 18Z" fill="white" opacity="0.9"/>
+          <line x1="6" y1="42" x2="62" y2="42" stroke="#22d3a5" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+          <text font-family="Syne, sans-serif" font-weight="800" font-size="28" letter-spacing="-0.8">
+            <tspan x="74" y="38" class="logo-scholar">Scholar</tspan><tspan fill="#22d3a5">AB</tspan>
+          </text>
+        </svg>
+      </a>
+      <div class="flex items-center gap-5 text-sm font-medium">
+        <a href="/" aria-current={currentPath === '/' ? 'page' : undefined} class={navCls('/')}>Home</a>
+        <a href="/about" aria-current={currentPath === '/about' ? 'page' : undefined} class={navCls('/about')}>About</a>
+        <button id="theme-toggle" aria-label="Toggle color theme" class="w-8 h-8 flex items-center justify-center rounded-lg text-lg leading-none text-gray-500 hover:text-gray-800 hover:bg-black/5 dark:text-white/40 dark:hover:text-white/80 dark:hover:bg-white/5 transition-colors">🌙</button>
+        <button id="hamburger-toggle" aria-label="Open navigation menu" aria-expanded="false" class="md:hidden w-8 h-8 flex items-center justify-center rounded-lg text-gray-500 hover:text-gray-800 hover:bg-black/5 dark:text-white/40 dark:hover:text-white/80 dark:hover:bg-white/5 transition-colors">
+          <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true"><rect y="0" width="18" height="2" rx="1" fill="currentColor"/><rect y="6" width="18" height="2" rx="1" fill="currentColor"/><rect y="12" width="18" height="2" rx="1" fill="currentColor"/></svg>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="glass-dropdown hidden absolute left-0 right-0 rounded-2xl overflow-hidden" style="top: calc(100% + 8px);">
+      <a href="/" class={mobCls('/', true)}>Home</a>
+      <a href="/about" class={mobCls('/about')}>About</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  function applyTheme() {
+    const theme = localStorage.getItem('theme') ?? 'dark';
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+    const btn = document.getElementById('theme-toggle');
+    if (btn) btn.textContent = theme === 'dark' ? '🌙' : '☀️';
+  }
+  function handleToggle() {
+    const isDark = document.documentElement.classList.contains('dark');
+    const next = isDark ? 'light' : 'dark';
+    localStorage.setItem('theme', next);
+    document.documentElement.classList.toggle('dark', !isDark);
+    const btn = document.getElementById('theme-toggle');
+    if (btn) btn.textContent = next === 'dark' ? '🌙' : '☀️';
+  }
+  function setupHamburger() {
+    const hamburger = document.getElementById('hamburger-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if (!hamburger || !menu) return;
+    const setOpen = (open) => { menu.classList.toggle('hidden', !open); hamburger.setAttribute('aria-expanded', String(open)); };
+    hamburger.addEventListener('click', (e) => { e.stopPropagation(); setOpen(menu.classList.contains('hidden')); });
+    menu.querySelectorAll('.mobile-menu-link').forEach(l => l.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('click', (e) => { const w = document.querySelector('.nav-wrapper'); if (w && !w.contains(e.target)) setOpen(false); });
+  }
+  document.addEventListener('astro:page-load', () => {
+    applyTheme();
+    document.getElementById('theme-toggle')?.addEventListener('click', handleToggle);
+    setupHamburger();
+  });
+</script>
+
+<style is:global>
+  .logo-scholar { fill: #0a0a0f; }
+  .dark .logo-scholar { fill: #ffffff; }
+  .glass-nav { background: rgba(255,255,255,0.8); -webkit-backdrop-filter: blur(20px) saturate(180%); backdrop-filter: blur(20px) saturate(180%); border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+  .dark .glass-nav { background: rgba(255,255,255,0.05); border: 0.5px solid rgba(255,255,255,0.1); box-shadow: 0 4px 24px rgba(0,0,0,0.4); }
+  .glass-dropdown { background: rgba(255,255,255,0.95); -webkit-backdrop-filter: blur(20px) saturate(180%); backdrop-filter: blur(20px) saturate(180%); border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+  .dark .glass-dropdown { background: rgba(15,15,20,0.95); border: 0.5px solid rgba(255,255,255,0.1); box-shadow: 0 8px 32px rgba(0,0,0,0.5); }
+</style>

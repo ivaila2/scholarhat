@@ -1,0 +1,116 @@
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Syne font utility */
+.font-syne {
+  font-family: 'Syne', sans-serif;
+}
+
+/* Heading letter-spacing */
+h1, h2 {
+  letter-spacing: -0.02em;
+}
+
+/* ── Dark-theme card ──────────────────────────────────────── */
+.card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+}
+.dark .card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+}
+.card-interactive {
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.card-interactive:hover {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+}
+.dark .card-interactive:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Card entrance animations ─────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.card-animate {
+  opacity: 0;
+  will-change: transform;
+  animation: fadeInUp 0.28s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.card-instant {
+  opacity: 0;
+  animation: fadeIn 0.15s ease both;
+}
+
+/* ── Region chip scroll row ───────────────────────────────── */
+.chips-row {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.chips-row::-webkit-scrollbar { display: none; }
+
+/* ── Tab pill buttons ─────────────────────────────────────── */
+.tab-pill {
+  border-radius: 50px;
+  padding: 7px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: transparent;
+  color: rgba(0, 0, 0, 0.4);
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.tab-pill.active {
+  background: rgba(34, 211, 165, 0.1);
+  border-color: rgba(34, 211, 165, 0.35);
+  color: #16a37e;
+}
+.dark .tab-pill {
+  border-color: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.4);
+}
+.dark .tab-pill.active {
+  background: rgba(34, 211, 165, 0.1);
+  border-color: rgba(34, 211, 165, 0.3);
+  color: #22d3a5;
+}
+
+/* ── Sort pill buttons ────────────────────────────────────── */
+.sort-pill {
+  border-radius: 50px;
+  padding: 5px 14px;
+  font-size: 11px;
+  cursor: pointer;
+  border: 0.5px solid rgba(0, 0, 0, 0.12);
+  background: transparent;
+  color: rgba(0, 0, 0, 0.4);
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.sort-pill.active {
+  border-color: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.06);
+  color: rgba(0, 0, 0, 0.7);
+}
+.dark .sort-pill {
+  border-color: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.4);
+}
+.dark .sort-pill.active {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+}

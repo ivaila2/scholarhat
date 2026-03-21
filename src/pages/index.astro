@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+import scholarships from '../data/scholarships.json';
+import programs from '../data/research-programs.json';
+import ScholarshipList from '../components/ScholarshipList.jsx';
+import ResearchList from '../components/ResearchList.jsx';
+
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+
+const activeScholarships = scholarships.filter(s => s.active === true);
+const activeTotal = activeScholarships.reduce((sum, s) => sum + parseInt(s.amount.replace(/[$,]/g, '')), 0);
+const activeTotalK = '$' + Math.round(activeTotal / 1000) + 'K+';
+
+const activeCount = activeScholarships.length;
+const upcomingCount = scholarships.filter(s => {
+  if (s.active !== false || s.pendingReview === true) return false;
+  if (s.openDate) return new Date(s.openDate + 'T00:00:00') > today;
+  return s.deadline && new Date(s.deadline + 'T00:00:00') >= today;
+}).length;
+
+---
+
+<Layout
+  title="ScholarAB"
+  description="Free, open-source scholarship and research program directory for Alberta high school students. No login, no ads, no data collection."
+  ogTitle="ScholarAB — Alberta Scholarships & Research Programs"
+  ogDescription="Free, open-source scholarship directory for Alberta high school students. No login, no ads."
+  ogUrl="https://scholarhat.vercel.app"
+  currentPath="/"
+>
+  <header class="mb-6 pt-2">
+    <h1 class="font-syne font-extrabold leading-[1.1] tracking-[-0.03em] text-gray-900 dark:text-white mb-4" style="font-size: clamp(25px, 3.6vw, 43px);">
+      Find your<br><span style="color: #22d3a5">next scholarship.</span>
+    </h1>
+    <!-- Stat bar -->
+    <div class="mb-4" style="border-radius: 14px; border: 0.5px solid rgba(128,128,128,0.15); background: rgba(0,0,0,0.03); overflow: hidden;">
+      <div class="grid grid-cols-3">
+        <!-- Total $ open -->
+        <div class="px-4 py-3.5 border-r" style="border-color: rgba(128,128,128,0.12);">
+          <div class="font-syne font-extrabold" style="font-size: 20px; color: #22d3a5; line-height: 1.1;">{activeTotalK}</div>
+          <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(128,128,128,0.6); margin-top: 3px;">Available now</div>
+        </div>
+        <!-- Total scholarships -->
+        <div class="px-4 py-3.5 border-r" style="border-color: rgba(128,128,128,0.12);">
+          <div class="font-syne font-extrabold text-gray-900 dark:text-white" style="font-size: 20px; line-height: 1.1;">{activeCount}</div>
+          <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(128,128,128,0.6); margin-top: 3px;">Scholarships</div>
+        </div>
+        <!-- Opening soon -->
+        <div class="px-4 py-3.5">
+          <div class="font-syne font-extrabold" style="font-size: 20px; color: #f59e0b; line-height: 1.1;">{upcomingCount}</div>
+          <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(128,128,128,0.6); margin-top: 3px;">Opening soon</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Tabs -->
+  <div class="flex gap-2 mb-6">
+    <button id="tab-scholarships" class="tab-pill active" onclick="switchTab('scholarships')">Scholarships</button>
+    <button id="tab-programs" class="tab-pill" onclick="switchTab('programs')">Programs</button>
+  </div>
+
+  <main>
+    <div id="section-scholarships">
+      <ScholarshipList initialScholarships={scholarships} client:load />
+    </div>
+    <div id="section-programs" style="display:none">
+      <ResearchList programs={programs} client:load />
+    </div>
+  </main>
+</Layout>
+
+<script is:inline>
+  function switchTab(tab) {
+    document.getElementById('tab-scholarships').classList.toggle('active', tab === 'scholarships');
+    document.getElementById('tab-programs').classList.toggle('active', tab === 'programs');
+    document.getElementById('section-scholarships').style.display = tab === 'scholarships' ? '' : 'none';
+    document.getElementById('section-programs').style.display = tab === 'programs' ? '' : 'none';
+    const url = new URL(window.location.href);
+    if (tab === 'programs') url.searchParams.set('tab', 'programs');
+    else url.searchParams.delete('tab');
+    history.replaceState({}, '', url);
+  }
+
+  document.addEventListener('astro:page-load', function () {
+    if (new URLSearchParams(window.location.search).get('tab') === 'programs') {
+      switchTab('programs');
+    }
+  });
+</script>
