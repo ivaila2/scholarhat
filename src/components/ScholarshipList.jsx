@@ -235,7 +235,7 @@ export default function ScholarshipList({ initialScholarships }) {
           const selected = selectedRegion === value;
           return (
             <button key={value} onClick={() => toggleRegion(value)}
-              className={`flex-shrink-0 inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium cursor-pointer transition-all duration-150 active:scale-95 select-none ${
+              className={`flex-shrink-0 inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm font-medium cursor-pointer transition-all duration-150 active:scale-95 select-none ${
                 selected
                   ? 'text-[#22d3a5]'
                   : 'bg-white text-gray-600 border border-gray-200 hover:border-gray-400 dark:bg-white/[0.03] dark:text-white/45 dark:border-white/10 dark:hover:border-white/20'
@@ -250,7 +250,7 @@ export default function ScholarshipList({ initialScholarships }) {
 
       {/* Count + controls row */}
       <div className="mb-5 flex items-center justify-between gap-4">
-        <p className="text-sm text-gray-400 dark:text-white/25">
+        <p className="text-sm text-gray-400 dark:text-white/25 flex-shrink-0">
           {scholarships.length} scholarship{scholarships.length !== 1 ? 's' : ''}
           <span style={{ margin: '0 5px', opacity: 0.5 }}>·</span>
           <button
@@ -261,7 +261,7 @@ export default function ScholarshipList({ initialScholarships }) {
             {showOnlyActive ? 'Show all' : 'Active only'}
           </button>
         </p>
-        <div className="flex items-center gap-1.5">
+        <div className="chips-row flex items-center gap-1.5 overflow-x-auto" style={{ flexWrap: 'nowrap' }}>
           <button
             onClick={() => { hasFiltered.current = true; setVisibleCount(16); setIsBookmarked(v => !v); }}
             aria-label={isBookmarked ? 'Show all scholarships' : 'Show bookmarked only'}

@@ -37,17 +37,17 @@ const upcomingCount = scholarships.filter(s => {
     <div class="mb-4" style="border-radius: 14px; border: 0.5px solid rgba(128,128,128,0.15); background: rgba(0,0,0,0.03); overflow: hidden;">
       <div class="grid grid-cols-3">
         <!-- Total $ open -->
-        <div class="px-4 py-3.5 border-r" style="border-color: rgba(128,128,128,0.12);">
+        <div class="px-3 py-3.5 md:px-4 border-r" style="border-color: rgba(128,128,128,0.12);">
           <div class="font-syne font-extrabold" style="font-size: 20px; color: #22d3a5; line-height: 1.1;">{activeTotalK}</div>
-          <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(128,128,128,0.6); margin-top: 3px;">Available now</div>
+          <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(128,128,128,0.6); margin-top: 3px;">Available</div>
         </div>
         <!-- Total scholarships -->
-        <div class="px-4 py-3.5 border-r" style="border-color: rgba(128,128,128,0.12);">
+        <div class="px-3 py-3.5 md:px-4 border-r" style="border-color: rgba(128,128,128,0.12);">
           <div class="font-syne font-extrabold text-gray-900 dark:text-white" style="font-size: 20px; line-height: 1.1;">{activeCount}</div>
           <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(128,128,128,0.6); margin-top: 3px;">Scholarships</div>
         </div>
         <!-- Opening soon -->
-        <div class="px-4 py-3.5">
+        <div class="px-3 py-3.5 md:px-4">
           <div class="font-syne font-extrabold" style="font-size: 20px; color: #f59e0b; line-height: 1.1;">{upcomingCount}</div>
           <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(128,128,128,0.6); margin-top: 3px;">Opening soon</div>
         </div>
