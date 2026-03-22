@@ -265,7 +265,7 @@ export default function ScholarshipList({ initialScholarships }) {
           <button
             onClick={() => { hasFiltered.current = true; setVisibleCount(16); setIsBookmarked(v => !v); }}
             aria-label={isBookmarked ? 'Show all scholarships' : 'Show bookmarked only'}
-            className="flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer"
+            className="flex-shrink-0 flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer whitespace-nowrap"
             style={isBookmarked
               ? { background: '#22d3a5', color: '#0a0a0f' }
               : { border: '1px solid', borderColor: 'rgba(128,128,128,0.25)', color: 'rgba(128,128,128,0.6)' }}
@@ -282,7 +282,7 @@ export default function ScholarshipList({ initialScholarships }) {
             <button
               key={value}
               onClick={() => { hasFiltered.current = true; setVisibleCount(16); setSortBy(value); }}
-              className={`sort-pill${sortBy === value ? ' active' : ''}`}
+              className={`sort-pill whitespace-nowrap flex-shrink-0${sortBy === value ? ' active' : ''}`}
             >
               {label}
             </button>
